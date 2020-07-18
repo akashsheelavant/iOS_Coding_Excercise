@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NetworkManagerType {
-    func fetchFacts()
+    func fetchFacts(completion: @escaping (_ response: Response?, _ error: String?) -> Void)
 }
 
 enum NetworkResponse:String {
@@ -30,20 +30,32 @@ enum Result<String> {
 struct NetworkManager: NetworkManagerType {
     let router = Router<FactsApi>()
 
-    func fetchFacts() {
+    func fetchFacts(completion: @escaping (_ response: Response?, _ error: String?) -> Void) {
         router.request(.facts) { (data, response, error) in
 
             if error != nil {
-                print("Please check internet connection and try again")
+                completion(nil, "Please check the internet connection and try again")
             }
             if let response = response as? HTTPURLResponse {
                 let result = self.handleNetworkResponse(response)
 
                 switch result {
                 case .success:
-                    print("inside success")
+                    guard let data = data,
+                        let utf8Data = String(decoding: data, as: UTF8.self).data(using: .utf8) else {
+                            completion(nil, NetworkResponse.noData.rawValue)
+                            return
+                    }
+                    let decoder = JSONDecoder()
+                    do {
+                        let response = try decoder.decode(Response.self, from: utf8Data)
+                        completion(response, nil)
+                    }  catch {
+                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+                    }
+
                 case .failure(let error):
-                    print("\(error)")
+                    completion(nil, error)
 
                 }
             }
