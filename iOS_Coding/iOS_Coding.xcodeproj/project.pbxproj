@@ -14,6 +14,13 @@
 		5B73448524C3228A00702B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B73448424C3228A00702B60 /* Assets.xcassets */; };
 		5B73448824C3228A00702B60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B73448624C3228A00702B60 /* LaunchScreen.storyboard */; };
 		5B73449324C3228A00702B60 /* iOS_CodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73449224C3228A00702B60 /* iOS_CodingTests.swift */; };
+		5B7344C224C35B6200702B60 /* ParamterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7344B824C35B6200702B60 /* ParamterEncoding.swift */; };
+		5B7344C324C35B6200702B60 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7344BA24C35B6200702B60 /* NetworkManager.swift */; };
+		5B7344C424C35B6200702B60 /* FactsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7344BC24C35B6200702B60 /* FactsEndPoint.swift */; };
+		5B7344C524C35B6200702B60 /* NetworkROUTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7344BE24C35B6200702B60 /* NetworkROUTER.swift */; };
+		5B7344C624C35B6200702B60 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7344BF24C35B6200702B60 /* HTTPTask.swift */; };
+		5B7344C724C35B6200702B60 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7344C024C35B6200702B60 /* HTTPMethod.swift */; };
+		5B7344C824C35B6200702B60 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7344C124C35B6200702B60 /* EndPointType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +45,13 @@
 		5B73448E24C3228A00702B60 /* iOS_CodingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_CodingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B73449224C3228A00702B60 /* iOS_CodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_CodingTests.swift; sourceTree = "<group>"; };
 		5B73449424C3228A00702B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B7344B824C35B6200702B60 /* ParamterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamterEncoding.swift; sourceTree = "<group>"; };
+		5B7344BA24C35B6200702B60 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5B7344BC24C35B6200702B60 /* FactsEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsEndPoint.swift; sourceTree = "<group>"; };
+		5B7344BE24C35B6200702B60 /* NetworkROUTER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkROUTER.swift; sourceTree = "<group>"; };
+		5B7344BF24C35B6200702B60 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		5B7344C024C35B6200702B60 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5B7344C124C35B6200702B60 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 		5B73447A24C3228800702B60 /* iOS_Coding */ = {
 			isa = PBXGroup;
 			children = (
+				5B7344B624C35B6200702B60 /* NetworkLayer */,
 				5B73447B24C3228800702B60 /* AppDelegate.swift */,
 				5B73447D24C3228800702B60 /* SceneDelegate.swift */,
 				5B73447F24C3228800702B60 /* ViewController.swift */,
@@ -97,6 +112,52 @@
 				5B73449424C3228A00702B60 /* Info.plist */,
 			);
 			path = iOS_CodingTests;
+			sourceTree = "<group>";
+		};
+		5B7344B624C35B6200702B60 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5B7344B724C35B6200702B60 /* Encoding */,
+				5B7344B924C35B6200702B60 /* Manager */,
+				5B7344BB24C35B6200702B60 /* EndPoint */,
+				5B7344BD24C35B6200702B60 /* Service */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		5B7344B724C35B6200702B60 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				5B7344B824C35B6200702B60 /* ParamterEncoding.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		5B7344B924C35B6200702B60 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5B7344BA24C35B6200702B60 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		5B7344BB24C35B6200702B60 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				5B7344BC24C35B6200702B60 /* FactsEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		5B7344BD24C35B6200702B60 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5B7344BE24C35B6200702B60 /* NetworkROUTER.swift */,
+				5B7344BF24C35B6200702B60 /* HTTPTask.swift */,
+				5B7344C024C35B6200702B60 /* HTTPMethod.swift */,
+				5B7344C124C35B6200702B60 /* EndPointType.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +261,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7344C524C35B6200702B60 /* NetworkROUTER.swift in Sources */,
+				5B7344C224C35B6200702B60 /* ParamterEncoding.swift in Sources */,
 				5B73448024C3228800702B60 /* ViewController.swift in Sources */,
+				5B7344C424C35B6200702B60 /* FactsEndPoint.swift in Sources */,
+				5B7344C624C35B6200702B60 /* HTTPTask.swift in Sources */,
+				5B7344C724C35B6200702B60 /* HTTPMethod.swift in Sources */,
+				5B7344C324C35B6200702B60 /* NetworkManager.swift in Sources */,
 				5B73447C24C3228800702B60 /* AppDelegate.swift in Sources */,
+				5B7344C824C35B6200702B60 /* EndPointType.swift in Sources */,
 				5B73447E24C3228800702B60 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
