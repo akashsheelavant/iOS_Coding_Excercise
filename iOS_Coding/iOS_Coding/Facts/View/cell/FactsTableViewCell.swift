@@ -6,8 +6,8 @@
 //  Copyright © 2020 Akash Sheelavant. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Kingfisher
 
 class FactsTableViewCell: UITableViewCell {
 
@@ -44,7 +44,7 @@ class FactsTableViewCell: UITableViewCell {
 
         // adding title label
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)        
+        titleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .bold)
         self.addSubview(titleLabel)
 
         // set constraints for title label
@@ -71,5 +71,7 @@ class FactsTableViewCell: UITableViewCell {
     func updateCell(model: FactsCellViewModelType) {
         titleLabel.text = model.title
         descriptionLabel.text = model.description
+        let url = URL(string: model.imageUrl ?? "")
+        factImageView.kf.setImage(with: url)
     }
 }
