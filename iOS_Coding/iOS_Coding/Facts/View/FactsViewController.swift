@@ -35,7 +35,7 @@ class FactsViewController: UIViewController {
 
         tableView.dataSource = self
 
-        tableView.register(FactsTableViewCell.self, forCellReuseIdentifier: "FactsTableViewCell")
+        tableView.register(FactsTableViewCell.self, forCellReuseIdentifier: FactsTableViewCell.reusingIdentifier)
     }
 
     func loadData() {
@@ -68,11 +68,13 @@ extension FactsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FactsTableViewCell", for: indexPath) as! FactsTableViewCell
-        if let model = viewModel?.model(at: indexPath.row) {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: FactsTableViewCell.reusingIdentifier,
+                                                    for: indexPath) as? FactsTableViewCell,
+            let model = viewModel?.model(at: indexPath.row) {
             cell.updateCell(model: model)
+            return cell
         }
-        return cell
+        return UITableViewCell()
     }
 
 }

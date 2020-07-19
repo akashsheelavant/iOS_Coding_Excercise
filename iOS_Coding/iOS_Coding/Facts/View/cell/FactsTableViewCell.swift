@@ -44,6 +44,7 @@ class FactsTableViewCell: UITableViewCell {
 
         // adding title label
         titleLabel.numberOfLines = 0
+        titleLabel.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)        
         self.addSubview(titleLabel)
 
         // set constraints for title label
@@ -55,8 +56,6 @@ class FactsTableViewCell: UITableViewCell {
 
         // adding description label
         descriptionLabel.numberOfLines = 0
-        //descriptionLabel.text = "Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony"
-        //descriptionLabel.text = ""
         self.addSubview(descriptionLabel)
 
         // set constraints for description label
